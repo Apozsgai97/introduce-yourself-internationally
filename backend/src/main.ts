@@ -1,6 +1,25 @@
 import http from "http";
 import querystring from "querystring";
 
+const introductions = [
+  {
+    language: "swedish",
+    text: "Hej! Jag heter NAME. Trevligt att träffa dig! Vad heter du?",
+  },
+  {
+    language: "english",
+    text: "Hi! My name is NAME. Nice to meet you! What's your name?",
+  },
+  {
+    language: "hungarian",
+    text: "Szia! Az én nevem NAME. Örülök a találkozásnak! Teged hogy hívnak?",
+  },
+  {
+    language: "spanish",
+    text: " ¡Hola! Mi nombre es NAME. Es un placer conocerte. ¿Cuál es su nombre?",
+  },
+];
+
 export function main() {
   http
     .createServer(function (req, res) {
