@@ -26,3 +26,17 @@ test("if invalid language return an error", () => {
 
   deepEqual(result, "Language not found. Write something else.");
 });
+
+test("works with uppercase input ", () => {
+  const introductions = {
+    language: "swedish",
+    text: "Hej! Jag heter NAME. Trevligt att träffa dig! Vad heter du?",
+  };
+
+  const result = makeIntroduction(introductions.text, "SWEDISH");
+
+  deepEqual(
+    result,
+    "Hej! Jag heter NAME. Trevligt att träffa dig! Vad heter du?"
+  );
+});

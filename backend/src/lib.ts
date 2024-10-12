@@ -1,6 +1,7 @@
 export function makeIntroduction(text: string, language: string){
+ const lowerCaseLanguage = language.toLowerCase();
 
- switch(language){
+ switch(lowerCaseLanguage){
   case "swedish":
    return text;
    break;
