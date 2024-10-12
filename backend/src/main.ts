@@ -1,7 +1,8 @@
 import http from "http";
 import querystring from "querystring";
 
-const introductions = [
+
+const introductions: Object[] = [
   {
     language: "swedish",
     text: "Hej! Jag heter NAME. Trevligt att träffa dig! Vad heter du?",
