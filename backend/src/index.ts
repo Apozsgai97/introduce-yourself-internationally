@@ -1,1 +1,4 @@
-console.log("Hej!");
+import { main } from "./main";
+
+
+main();
