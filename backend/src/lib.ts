@@ -11,8 +11,13 @@ export function makeIntroduction(introductions: Introduction[], language: string
  
 }
 
-export function sliceResult(result: string){
+export function addUsername(text: string, name: string){
+ const textWithUserName = text.replace("NAME", name);
+ return textWithUserName;
+}
+
+/*export function sliceResult(result: string){
  const splitResult = result.split(":");
  const sliceResult = splitResult[1].slice(1,-2);
  return sliceResult;
-}
+}*/

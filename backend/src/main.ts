@@ -1,6 +1,6 @@
 import http from "http";
 import querystring from "querystring";
-import { sliceResult, makeIntroduction } from "./lib";
+import { makeIntroduction, addUsername } from "./lib";
 
 export interface Introduction {
 language: string,
@@ -45,10 +45,10 @@ export function main() {
             "Access-control-allow-methods": "OPTIONS, POST, GET",
             "access-control-max-age": "2592000",
           });
-          //const result = JSON.stringify(parsedData);
-          //const language = sliceResult(result);
+
           const introductionText = makeIntroduction(introductions, language);
-          res.write(introductionText);
+          const textWithUserName = addUsername(introductionText, name);
+          res.write(textWithUserName);
           res.end();
         } catch (error) {
           if (!res.headersSent) {

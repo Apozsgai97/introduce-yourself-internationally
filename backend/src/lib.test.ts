@@ -1,6 +1,6 @@
 import test from "node:test";
 import { deepEqual } from "node:assert/strict";
-import { makeIntroduction, sliceResult } from "./lib";
+import { makeIntroduction, addUsername } from "./lib";
 
 test("if swedish language return the text", () => {
   const introductions = [
@@ -64,10 +64,23 @@ test("can choose from multiple languages ", () => {
   deepEqual(result, "Hi! My name is NAME. Nice to meet you! What's your name?");
 });
 
-test("slice the input to the right format", () => {
+test("change NAME to username.", () => {
+ const name = "Adrienn";
+ const text = "Hi! My name is NAME. Nice to meet you! What's your name?";
+
+ const result = addUsername(text, name);
+
+ deepEqual(result, "Hi! My name is Adrienn. Nice to meet you! What's your name?");
+});
+
+
+
+
+
+/*test("slice the input to the right format", () => {
   const input = `{language:"HUNGARIAN"}`;
 
   const result = sliceResult(input);
 
   deepEqual(result, "HUNGARIAN");
-});
+});*/
