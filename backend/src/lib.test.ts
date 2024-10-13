@@ -73,6 +73,18 @@ test("change NAME to username.", () => {
  deepEqual(result, "Hi! My name is Adrienn. Nice to meet you! What's your name?");
 });
 
+test("with empty name the text does not change", () => {
+  const name = "";
+  const text = "Hi! My name is NAME. Nice to meet you! What's your name?";
+
+  const result = addUsername(text, name);
+
+  deepEqual(
+    result,
+    "Hi! My name is NAME. Nice to meet you! What's your name?"
+  );
+});
+
 
 
 

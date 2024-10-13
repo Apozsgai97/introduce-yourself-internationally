@@ -12,9 +12,10 @@ export function makeIntroduction(introductions: Introduction[], language: string
 }
 
 export function addUsername(text: string, name: string){
+ if(name === "") return text;
  const textWithUserName = text.replace("NAME", name);
  return textWithUserName;
-}
+};
 
 /*export function sliceResult(result: string){
  const splitResult = result.split(":");
