@@ -1,12 +1,14 @@
 import test from "node:test";
 import { deepEqual } from "node:assert/strict";
-import { makeIntroduction } from "./lib";
+import { makeIntroduction, sliceResult } from "./lib";
 
 test("if swedish language return the text", () => {
-  const introductions = [{
-    language: "swedish",
-    text: "Hej! Jag heter NAME. Trevligt att träffa dig! Vad heter du?",
-  }];
+  const introductions = [
+    {
+      language: "swedish",
+      text: "Hej! Jag heter NAME. Trevligt att träffa dig! Vad heter du?",
+    },
+  ];
 
   const result = makeIntroduction(introductions, "swedish");
 
@@ -17,10 +19,12 @@ test("if swedish language return the text", () => {
 });
 
 test("if invalid language return an error", () => {
-  const introductions = [{
-    language: "swedish",
-    text: "Hej! Jag heter NAME. Trevligt att träffa dig! Vad heter du?",
-  }];
+  const introductions = [
+    {
+      language: "swedish",
+      text: "Hej! Jag heter NAME. Trevligt att träffa dig! Vad heter du?",
+    },
+  ];
 
   const result = makeIntroduction(introductions, "");
 
@@ -28,10 +32,12 @@ test("if invalid language return an error", () => {
 });
 
 test("works with uppercase input ", () => {
-  const introductions = [{
-    language: "swedish",
-    text: "Hej! Jag heter NAME. Trevligt att träffa dig! Vad heter du?",
-  }];
+  const introductions = [
+    {
+      language: "swedish",
+      text: "Hej! Jag heter NAME. Trevligt att träffa dig! Vad heter du?",
+    },
+  ];
 
   const result = makeIntroduction(introductions, "SWEDISH");
 
@@ -56,4 +62,12 @@ test("can choose from multiple languages ", () => {
   const result = makeIntroduction(introductions, "english");
 
   deepEqual(result, "Hi! My name is NAME. Nice to meet you! What's your name?");
+});
+
+test("slice the input to the right format", () => {
+  const input = `{language:"HUNGARIAN"}`;
+
+  const result = sliceResult(input);
+
+  deepEqual(result, "HUNGARIAN");
 });

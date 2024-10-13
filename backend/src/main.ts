@@ -1,5 +1,6 @@
 import http from "http";
 import querystring from "querystring";
+import { sliceResult, makeIntroduction } from "./lib";
 
 export interface Introduction {
 language: string,
@@ -42,7 +43,9 @@ export function main() {
             "access-control-max-age": "2592000",
           });
           const result = JSON.stringify(parsedData);
-          res.write(result);
+          const language = sliceResult(result);
+          const introductionText = makeIntroduction(introductions, language);
+          res.write(introductionText);
           res.end();
         } catch (error) {
           if (!res.headersSent) {

@@ -10,3 +10,9 @@ export function makeIntroduction(introductions: Introduction[], language: string
  return "Language not found. Write something else."; 
  
 }
+
+export function sliceResult(result: string){
+ const splitResult = result.split(":");
+ const sliceResult = splitResult[1].slice(1,-2);
+ return sliceResult;
+}
