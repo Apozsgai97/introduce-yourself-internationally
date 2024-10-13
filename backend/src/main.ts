@@ -36,14 +36,17 @@ export function main() {
       req.on("end", () => {
         try {
           const parsedData = querystring.parse(body);
+          const language = parsedData.language as string;
+          const name = parsedData.name as string
+         
           res.writeHead(200, {
             "Content-Type": "application/json",
             "Access-control-allow-origin": "*",
             "Access-control-allow-methods": "OPTIONS, POST, GET",
             "access-control-max-age": "2592000",
           });
-          const result = JSON.stringify(parsedData);
-          const language = sliceResult(result);
+          //const result = JSON.stringify(parsedData);
+          //const language = sliceResult(result);
           const introductionText = makeIntroduction(introductions, language);
           res.write(introductionText);
           res.end();
