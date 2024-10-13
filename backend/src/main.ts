@@ -43,7 +43,7 @@ export function main() {
                   "Access-control-allow-methods": "OPTIONS, POST, GET",
                   "access-control-max-age": "2592000",
                 });
-                res.write(JSON.stringify({ message: textWithUserName }));
+                res.write(JSON.stringify({ introduction: textWithUserName }));
                 res.end();
               }
             }
