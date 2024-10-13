@@ -1,8 +1,12 @@
 import http from "http";
 import querystring from "querystring";
 
+export interface Introduction {
+language: string,
+text: string
+}
 
-const introductions: Object[] = [
+const introductions: Introduction[] = [
   {
     language: "swedish",
     text: "Hej! Jag heter NAME. Trevligt att träffa dig! Vad heter du?",
