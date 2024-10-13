@@ -13,9 +13,15 @@ export function makeIntroduction(introductions: Introduction[], language: string
 
 export function addUsername(text: string, name: string){
  if(name === "") return text;
- const textWithUserName = text.replace("NAME", name);
+ const textWithUserName = text.replace("NAME", rightFormatName(name));
  return textWithUserName;
 };
+
+export function rightFormatName(name: string){
+ const trimedName = name.trim();
+ 
+ return trimedName.charAt(0).toUpperCase() + trimedName.slice(1).toLowerCase();
+}
 
 /*export function sliceResult(result: string){
  const splitResult = result.split(":");

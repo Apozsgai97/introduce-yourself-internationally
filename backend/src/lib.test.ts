@@ -1,6 +1,6 @@
 import test from "node:test";
 import { deepEqual } from "node:assert/strict";
-import { makeIntroduction, addUsername } from "./lib";
+import { makeIntroduction, addUsername, rightFormatName } from "./lib";
 
 test("if swedish language return the text", () => {
   const introductions = [
@@ -83,6 +83,14 @@ test("with empty name the text does not change", () => {
     result,
     "Hi! My name is NAME. Nice to meet you! What's your name?"
   );
+});
+
+test("change name to right format", () => {
+  const name = "aDRIenn";
+
+  const result = rightFormatName(name);
+
+  deepEqual(result, "Adrienn");
 });
 
 
