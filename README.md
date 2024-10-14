@@ -27,3 +27,10 @@ When traveling to a different country, the easiest way to connect with locals is
 ## New technical concept
 
 In the initial version of my application, I used mock data, but I later decided to implement a real database; SQLite. My learning journey was guided by a <a href="https://frontendmasters.com/">Frontend Masters</a> course, "Complete intro to SQLite" by Brian Holt. The course offers organized lectures and well-structured documentation, with the ability to search through key topics. Additionally, I used the browser to find specific solutions to particular problems.
+
+## Installation 
+
+* Install with npm i
+* Run backend and frontend at the same time. 
+* Frontend: npm i dev
+* Backend: npm i build + npm i start
