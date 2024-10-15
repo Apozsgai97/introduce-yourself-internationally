@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Introduce Yourself Internationally</title>
+    <script src="./src/index.ts" differ></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
@@ -17,7 +18,7 @@
         <b>Available languages:</b> english, swedish, hungarian, spanish,
         german, french, polish, italian, turkish, norwegian
       </p>
-      <form action="http://localhost:8080/" method="POST">
+      <form id= introductionForm action="http://localhost:8080/" method="POST">
         <label for="language">Language:</label>
         <input
           type="text"
@@ -28,9 +29,12 @@
         <label for="name">Your name:</label>
         <input type="text" name="name" id="name" placeholder="Adrienn" />
         <button type="submit" style="background-color: #80669d">
-          Submit
+          Get introduction
         </button>
       </form>
+
+      <section id="introductionOutput"></section>
     </main>
   </body>
 </html>
+
